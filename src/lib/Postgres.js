@@ -1,7 +1,13 @@
 import pkg from "pg";
 const { Client } = pkg;
 
-export const client = new Client();
+export const client = new Client({
+  host: process.env.PGHOST || "localhost",
+  port: process.env.PGPORT || 5432,
+  database: process.env.PGDATABASE,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+});
 
 let initialized = false;
 
