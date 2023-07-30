@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/main.astro';
-import { createSession, getSession, updateSession } from '../lib/AppWrite.js';
+import { createSession, getSession, updateSession } from '../lib/Postgres.js';
 
 // handle the form submission
 if (Astro.request.method === "POST") {
@@ -31,8 +31,8 @@ let abstract;
 if (sessionID) {
   const session = await getSession(sessionID);
   if (session) {
-    title = session.Title;
-    abstract = session.Abstract;
+    title = session.title;
+    abstract = session.abstract;
   }
 }
 ---

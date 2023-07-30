@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/main.astro';
 import CFPCard from '../components/CFPCard.astro';
 import Button from '../components/Button.astro';
-import {getSessions} from '../lib/AppWrite.js';
+import {getSessions} from '../lib/Postgres.js';
 
 const sessions = await getSessions();
 ---

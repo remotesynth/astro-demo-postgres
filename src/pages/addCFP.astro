@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/main.astro';
-import { getSession, createCFP } from '../lib/AppWrite.js';
+import { getSession, createCFP } from '../lib/Postgres.js';
 
 let sessionID = Astro.url.searchParams.get('sessionID');
 
